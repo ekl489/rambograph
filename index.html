@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Graph -->
+        <title>Graph</title>
+
+        <!-- Custom Resources -->
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="css/callout.css">
+
+        <!-- Dependencies -->
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="bower_components/d3/d3.min.js"></script>
+        <script src="bower_components/function-plot/dist/function-plot.js"></script>
+        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+        <link rel="stylesheet" type="text/css" href="css/theme.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <!-- Heading -->
+            <h1 class="heading">RamboGraph 1.0</h1><hr>
+
+            <!-- Info Bar -->
+            <div class="alert alert-info" role="alert">
+                <a href="#" class="alert-link" data-toggle="modal" data-target="#commands">To see a useful dialogue on the commands you can use click here.</a>
+            </div>
+
+            <!-- RamboGraph -->
+            <div class="row">
+                <div class="col-md-4">
+
+                    <!-- Expression Box 1 -->
+                    <div class="expression-box bs-callout bs-callout-primary">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Expression</span>
+                            <input id="expression-1" onchange="draw()" type="text" class="form-control expression-text" placeholder="y = 15x + 34">
+                        </div>
+                    </div>
+
+                    <!-- Expression Box 2 -->
+                    <div class="expression-box bs-callout bs-callout-success">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Expression</span>
+                            <input id="expression-2" onchange="draw()" type="text" class="form-control expression-text" placeholder="y = x^2">
+                        </div>
+                    </div>
+
+                    <!-- Expression Box 3 -->
+                    <div class="expression-box bs-callout bs-callout-danger">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Expression</span>
+                            <input id="expression-3" onchange="draw()" type="text" class="form-control expression-text" placeholder="x + 1">
+                        </div>
+                    </div>
+
+                    <!-- Expression Box 4 -->
+                    <div class="expression-box bs-callout bs-callout-warning">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Expression</span>
+                            <input id="expression-4" onchange="draw()" type="text" class="form-control expression-text" placeholder="x - 2">
+                        </div>
+                    </div>
+
+                    <!-- Expression Box 5 -->
+                    <div class="expression-box bs-callout bs-callout-info">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Expression</span>
+                            <input id="expression-5" onchange="draw()" type="text" class="form-control expression-text" placeholder="y + 1 = x">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div id="canvas"></div>
+                </div>
+        </div>
+        </div>
+        <!-- Command Modal -->
+        <div id="commands" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <!-- Modal Heading -->
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Commands</h4>
+                        </div>
+                        <!-- Modal body-->
+                        <div class="modal-body">
+                            <div class="list-group">
+                                <h4 class="list-group-item-heading">Indices</h4>
+                                <p class="list-group-item-text">
+                                    <pre><code>x^2</code></pre>
+                                </p>
+                            </div>
+                            <div class="list-group">
+                                <h4 class="list-group-item-heading">Roots</h4>
+                                <p class="list-group-item-text">
+                                For square roots use<pre><code>sqrt()</code></pre>
+                                For <i>y</i> roots use:
+                                <pre><code>nthRoot(x,y)</code></pre>
+                                </p>
+                            </div>
+                            <div class="list-group">
+                                <h4 class="list-group-item-heading">Sine, Cosine & Tan</h4>
+                                <p class="list-group-item-text">
+                                Simply use:
+                                <pre><code>sin()<br>cos()<br>tan()</code></pre>
+                                </p>
+                            </div>
+                            <div class="list-group">
+                                <h4 class="list-group-item-heading">Pi</h4>
+                                <p class="list-group-item-text">
+                                Simply use:
+                                <pre><code>PI</code></pre>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Modal footer-->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Script -->
+        <script src="js/script.js"></script>
+    </body>
+</html>
